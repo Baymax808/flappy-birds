@@ -9,36 +9,36 @@ description: "Task list generated from spec + plan for Flappy Birds web"
 
 ## Phase 1: Setup (Project initialization)
 
-- [ ] T001 Create project layout and README at repository root (package.json, vite, tsconfig)
+ - [X] T001 Create project layout and README at repository root (package.json, vite, tsconfig)
   - Path: `package.json`, `vite.config.ts`, `tsconfig.json`, `README.md`
-- [ ] T002 [P] Initialize git branch files (ensure branch exists and tracks origin)
+ - [X] T002 [P] Initialize git branch files (ensure branch exists and tracks origin)
   - Path: workspace root (git)
-- [ ] T003 [P] Create `src/` skeleton with placeholder files
+ - [X] T003 [P] Create `src/` skeleton with placeholder files
   - Path: `src/`, create: `src/main.ts`, `src/index.html`, `src/assets/svg/`, `src/assets/audio/`
-- [ ] T004 [P] Add linting/formatting and config files: ESLint, Prettier, EditorConfig
+ - [X] T004 [P] Add linting/formatting and config files: ESLint, Prettier, EditorConfig
   - Path: `.eslintrc.cjs`, `.prettierrc`, `.editorconfig`
-- [ ] T005 [P] Add testing tooling configs (Jest or Vitest) and Playwright setup
+ - [X] T005 [P] Add testing tooling configs (Jest or Vitest) and Playwright setup
   - Path: `jest.config.js` or `vitest.config.ts`, `playwright.config.ts`
-- [ ] T006 Create `package.json` scripts: `dev`, `build`, `test`, `e2e`, `lint`, `format`
+ - [X] T006 Create `package.json` scripts: `dev`, `build`, `test`, `e2e`, `lint`, `format`
   - Path: `package.json`
-- [ ] T007 [P] Add initial GitHub Actions workflow skeleton for CI
+ - [X] T007 [P] Add initial GitHub Actions workflow skeleton for CI
   - Path: `.github/workflows/ci.yml`
 
 ## Phase 2: Foundational (blocking prerequisites)
 
-- [ ] T008 Setup Canvas + SVG integration example (render a single SVG sprite onto Canvas)
+ - [X] T008 Setup Canvas + SVG integration example (render a single SVG sprite onto Canvas)
   - Path: `src/rendering/canvas-loop.ts`, `src/assets/svg/bird.svg`
-- [ ] T009 [P] Implement physics module skeleton with types and exported functions
+ - [X] T009 [P] Implement physics module skeleton with types and exported functions
   - Path: `src/physics/physics.ts`
-- [ ] T010 [P] Implement input handler skeleton for mouse/keyboard/touch
+ - [X] T010 [P] Implement input handler skeleton for mouse/keyboard/touch
   - Path: `src/input/input.ts`
-- [ ] T011 [P] Implement persistence wrapper with fallback (localStorage → sessionStorage)
+ - [X] T011 [P] Implement persistence wrapper with fallback (localStorage → sessionStorage)
   - Path: `src/storage/persistence.ts`
-- [ ] T012 Create HUD/UI skeleton (score display overlay) using SVG tokens
+ - [X] T012 Create HUD/UI skeleton (score display overlay) using SVG tokens
   - Path: `src/ui/hud.ts`, `src/assets/svg/ui.svg`
-- [ ] T013 [P] Add unit test harness and a first failing test for physics module
+ - [X] T013 [P] Add unit test harness and a first failing test for physics module
   - Path: `tests/unit/physics.test.ts`
-- [ ] T014 Add Playwright smoke test skeleton for page load and canvas present
+ - [X] T014 Add Playwright smoke test skeleton for page load and canvas present
   - Path: `tests/e2e/smoke.spec.ts`
 
 ## Phase 3: User Story 1 - Basic Gameplay (P1)
