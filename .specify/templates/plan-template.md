@@ -31,7 +31,20 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+This project enforces the repository constitution. Before Phase 0 research the plan
+MUST demonstrate how the feature satisfies the following gates (as applicable):
+
+- Code Quality: Linting and formatting are configured; public APIs documented; modular design justified.
+- Testing: Tests or failing test stubs are present for the P1 scenarios; unit and integration scope defined; target
+  coverage for the feature declared.
+- UX Consistency: Design tokens/components to be used are listed; accessibility checks and acceptance criteria
+  provided for user-facing flows.
+- Performance: Any performance targets (p95 latency, memory budget, frame rates) or resource budgets are
+  declared and measurable benchmarks are planned.
+- Observability & Release: Expected metrics, logging, and release/rollback plan for the change are documented.
+
+The plan MUST include a short "Constitution Checklist" mapping these gates to specific files, tests, and CI
+requirements so the Phase 0 → Phase 1 transition can be validated.
 
 ## Project Structure
 

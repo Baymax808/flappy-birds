@@ -113,3 +113,15 @@
 - **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
 - **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
 - **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+
+## Constitution Alignment (mandatory)
+
+Every spec MUST include a short "Constitution Alignment" section that states how the
+feature meets the repository constitution. At minimum this should reference:
+
+- Tests included (unit/integration/acceptance) and any coverage targets.
+- UX consistency checks (components/tokens used, accessibility notes).
+- Performance goals and any planned benchmarks.
+- Observability and release notes (metrics to monitor, rollback plan).
+
+This section is required to pass the Constitution Check in the implementation plan.

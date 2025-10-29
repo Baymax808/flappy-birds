@@ -52,6 +52,10 @@ description: "Task list template for feature implementation"
 - [ ] T002 Initialize [language] project with [framework] dependencies
 - [ ] T003 [P] Configure linting and formatting tools
 
+*Constitution enforcement note*: The CI configuration and project tasks MUST ensure
+the constitution gates are enforced (lint, tests, smoke checks, basic perf/benchmark jobs
+where applicable). Update T003 to include CI enforcement for linting/tests when possible.
+
 ---
 
 ## Phase 2: Foundational (Blocking Prerequisites)
