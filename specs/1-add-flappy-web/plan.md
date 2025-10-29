@@ -44,6 +44,60 @@ MUST be satisfied before Phase 0 → Phase 1 transition.
 
 The plan below maps to these gates; Phase 0 will confirm tooling and any unmet gates.
 
+## Project Structure
+
+### Documentation (in `specs/1-add-flappy-web/`)
+
+```text
+specs/1-add-flappy-web/
+├── spec.md            # feature spec (existing)
+├── plan.md            # this file
+├── research.md        # research decisions
+├── data-model.md      # data model
+├── quickstart.md      # how to run + build
+├── contracts/         # optional API contracts
+└── checklists/        # spec quality checklist
+```
+
+### Source Code (repository root)
+
+We will use a single frontend project layout optimized for a small web game.
+
+```text
+package.json
+vite.config.ts
+tsconfig.json
+public/                # static assets (favicon, manifest)
+src/
+├── main.ts            # app bootstrap (mount canvas, attach handlers)
+├── index.html
+├── assets/
+│   ├── svg/           # inline-able SVG symbols/components
+│   └── audio/         # optional audio files, lazy-loaded
+├── rendering/
+│   └── canvas-loop.ts # canvas rendering loop and renderer utilities
+├── physics/
+│   └── physics.ts     # gravity, flap impulse, collision detection
+├── input/
+│   └── input.ts       # mouse / touch / keyboard handling
+├── ui/
+│   └── hud.ts         # score display, overlays, accessibility hooks
+├── storage/
+│   └── persistence.ts # local/session storage wrappers
+└── tests/
+    ├── unit/          # Jest tests for physics and logic
+    └── e2e/           # Playwright tests
+
+tests/                 # test runner configs and helpers (optional)
+```
+
+### Dev & CI
+
+- `package.json` scripts: `dev`, `build`, `test`, `e2e`, `lint`, `format`.
+- CI: GitHub Actions workflow at `.github/workflows/ci.yml` to run lint, unit tests,
+  Playwright smoke tests (headless), and a lightweight performance check.
+- Tooling: ESLint, Prettier, TypeScript, Vitest/Jest, Playwright.
+
 ## Phase 0: Research & Decisions (deliverable: research.md)
 
 Goals:
