@@ -16,7 +16,7 @@ difficulty, and responsive input on desktop and mobile browsers.
 
 - Actors: Player (human), Browser (client)
 - Actions: Tap/click/press to flap, hold to do nothing, restart game, view high score
-- Data: Current score, best score (local persistence), game state (running/over),
+- Data: Current score, best score (persist locally if supported), game state (running/over),
   pipe positions, bird vertical position and velocity
 
 ## User Scenarios & Testing *(mandatory)*
@@ -43,16 +43,20 @@ change vertical velocity and that scoring increments when passing a pipe.
 
 ### User Story 2 - Responsive controls & persistence (Priority: P2)
 
-The game must be playable on desktop and mobile; best score persists locally.
+The game must be playable on desktop and mobile; best score should persist locally if the
+browser supports persistent storage, otherwise the score should be available for the
+current session only.
 
 **Independent Test**: Verify input through mouse click, keyboard (space), and touch.
-Local storage contains best score after game end and page reload.
+If the environment supports persistent storage, verify persistent storage contains the best
+score after game end and page reload; otherwise verify session-only score behavior.
 
 **Acceptance Scenarios**:
 
 1. **Given** a mobile browser, **When** user taps screen, **Then** bird flaps immediately.
 2. **Given** a user finishes a run with score greater than stored best, **When** run ends,
-   **Then** best score is updated in local storage and displayed.
+   **Then** best score is persisted (if supported) and displayed; if not supported, display
+   and retain best score for the session.
 
 ---
 
@@ -71,7 +75,10 @@ Local storage contains best score after game end and page reload.
 - **FR-002**: The bird's vertical motion MUST respond to a flap impulse and gravity simulation.
 - **FR-003**: Passing between a pair of pipes MUST increment the player's score by 1.
 - **FR-004**: Collision with pipes, ground, or ceiling MUST end the run and display Game Over.
-- **FR-005**: The game MUST persist the best score locally and retrieve it on page load, if possible.
+-- **FR-005**: The game MUST persist the best score locally when the browser environment
+  supports persistent storage, and retrieve it on page load; if persistent storage is
+  unavailable the game MUST gracefully fall back to session-only storage and continue
+  to function without errors.
 - **FR-006**: Controls MUST accept mouse click, keyboard (space), and touch input.
 - **FR-007**: The game MUST maintain a stable frame experience (see Success Criteria for specifics).
 - **FR-008**: The UI MUST present current score and best score during/after runs.

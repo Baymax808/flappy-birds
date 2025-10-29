@@ -34,10 +34,9 @@
 - Items marked incomplete require spec updates before `/speckit.clarify` or `/speckit.plan`
 ## Validation Notes
 
-- Overall status: PASS — the spec is complete and ready for planning.
-- Minor note: the spec references "local persistence" for best score; this is
-	intentionally platform-level (browser local persistence). It does not mandate
-	a specific API or library. If you prefer to avoid even that wording, I can
-	update the spec to say "persist locally (if supported)" to be less prescriptive.
+-- Overall status: PASS — the spec is complete and ready for planning.
+-- Minor note addressed: the spec wording for score persistence was updated to
+  use platform-neutral language ("persist locally if supported") and to document
+  graceful fallback to session-only behavior when persistent storage is unavailable.
 
 No [NEEDS CLARIFICATION] markers were required for this feature.
